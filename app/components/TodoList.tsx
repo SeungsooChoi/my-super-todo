@@ -1,21 +1,16 @@
 "use client"
 
 import { FormEvent, useState } from "react"
-import { Todo } from "../hooks/useTodos";
 import { TodoItem } from "./TodoItem";
-import { useTodosStore } from "../lib/store/useTodosStore";
+import { useTodoStore } from "../lib/store/useTodoStore";
 
-interface TodoListProps {
-  initialTodos?: Todo[];
-}
-
-export function TodoList({ initialTodos = [] }: TodoListProps){
+export function TodoList(){
   console.log("render TodoList");
 
-  const todos = useTodosStore((state) => state.todos);
-  const addTodo = useTodosStore((state) => state.addTodo);
-  const removeTodo = useTodosStore((state) => state.removeTodo);
-  const toggleTodo = useTodosStore((state) => state.toggleTodo);
+  const todos = useTodoStore((state) => state.todos);
+  const addTodo = useTodoStore((state) => state.addTodo);
+  const removeTodo = useTodoStore((state) => state.removeTodo);
+  const toggleTodo = useTodoStore((state) => state.toggleTodo);
   const [input, setInput] = useState("");
   
   const handleSubmit = (e: FormEvent) => {

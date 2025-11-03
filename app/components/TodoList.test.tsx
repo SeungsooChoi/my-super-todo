@@ -2,6 +2,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { TodoList } from "./TodoList";
+import { useTodoStore } from "../lib/store/useTodoStore";
+
+
+beforeEach(() => {
+  useTodoStore.setState({ todos: [] }); // ✅ 테스트 시작 전 store 초기화
+});
 
 describe("TodoList", () => {
   const setup = () => {

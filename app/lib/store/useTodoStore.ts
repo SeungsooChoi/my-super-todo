@@ -8,7 +8,7 @@ interface TodoState {
   toggleTodo: (id: string) => void;
 }
 
-export const useTodosStore = create<TodoState>((set) => ({
+export const useTodoStore = create<TodoState>((set) => ({
   todos: [],
   addTodo: (text: string) => {
     set((state) => ({
