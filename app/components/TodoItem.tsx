@@ -7,6 +7,8 @@ interface TodoItemProps {
 }
 
 export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
+  console.log("render TodoItem");
+
   return (
     <li
       className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2 shadow-sm"
