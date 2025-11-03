@@ -6,8 +6,8 @@ export type Todo = {
   completed: boolean;
 }
 
-export function useTodos() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+export function useTodos(initialTodos: Todo[] = []) {
+  const [todos, setTodos] = useState<Todo[]>(initialTodos);
 
   const addTodos = (text: string) => {
     if (!text.trim()) return;
